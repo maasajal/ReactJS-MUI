@@ -6,6 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+  background-color: transparent !important;
+} */
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+  margin-top: 62px;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
