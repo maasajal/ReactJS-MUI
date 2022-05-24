@@ -1,10 +1,12 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
+import { styled, alpha } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
+import Menu from '@mui/material/Menu';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -14,9 +16,12 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import WindowIcon from '@mui/icons-material/Window';
+import MenuItem from '@mui/material/MenuItem';
 import PersonIcon from '@mui/icons-material/Person';
+import SettingsIcon from '@mui/icons-material/Settings';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 import {
     Link as RouterLink,
@@ -26,14 +31,12 @@ import {
     useLocation,
   } from 'react-router-dom';
 import { alignProperty } from '@mui/material/styles/cssUtils';
+import CustomizedMenus from './CustomizedMenus';
 
 const drawerWidth = 240;
 
 export default function PermanentDrawerLeft() {
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -78,7 +81,7 @@ export default function PermanentDrawerLeft() {
                 <ListItemIcon sx={{
                     color: '#fff'
                 }}>
-                  {index % 0 === 0 ? <InboxIcon /> : <WindowIcon />}
+                    <WindowIcon />
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
@@ -86,7 +89,10 @@ export default function PermanentDrawerLeft() {
           ))}
         </List>
         <Divider />
-        <List>
+
+        <Box><CustomizedMenus /></Box>
+
+        {/* <List>
           {['Menu >', 'Profile View', 'Settings View'].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
@@ -99,8 +105,10 @@ export default function PermanentDrawerLeft() {
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
+        </List> */}
+
       </Drawer>
+
       <Box
         component="main"
         sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}

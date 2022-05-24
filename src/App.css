@@ -15,6 +15,10 @@
   color: #fff !important;
 }
 
+.css-zddlty-MuiButtonBase-root-MuiButton-root {
+
+  margin-left: -135px !important;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
